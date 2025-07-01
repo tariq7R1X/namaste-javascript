@@ -135,6 +135,40 @@ It goes through **two main phases** every time a script runs:
 
 ---
 
+### 🔄 Call Stack (Bonus Concept)
+
+When functions are called, JavaScript uses a stack called the **Call Stack** to manage what’s currently being executed.
+
+🧠 **Real-life Analogy**:  
+> Imagine stacking plates in a canteen.  
+> You always remove the **last plate added first** — this is called **LIFO (Last In, First Out)**.
+
+JavaScript handles functions the same way:
+- The most recently called function goes on **top** of the stack.
+- When it finishes, it is **removed** from the top.
+
+---
+
+### 📌 Key Points to Remember
+
+- JavaScript **creates memory first**, then **executes** code line by line.
+- All code runs inside an **Execution Context**.
+- Every time a function is called, a **new Execution Context** is created.
+- The **Call Stack** keeps track of these contexts like a stack of plates.
+- Last function in = first to complete and get removed.
+
+### 🧠 Other Names for Call Stack:
+Sometimes, people refer to the call stack using different names:
+
+1. Call Stack  
+2. Execution Context  
+3. Program Stack  
+4. Control Stack  
+5. Machine Stack  
+6. Runtime Stack
+
+---
+
 ## 📷 Visual Poster
 
 ![How JavaScript Works](how-js-works.png)
