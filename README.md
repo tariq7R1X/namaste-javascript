@@ -8,9 +8,8 @@ It includes all the key concepts covered in the course, along with **practical c
 ## 📚 Table of Contents
 
 - [Introduction to Namaste JavaScript](#-introduction-to-namaste-javascript)
-- [Detailed Notes](#-detailed-notes)
-- [Fun Facts](#-fun-fact)
-- [Summary](#-summary)
+- [How JavaScript Works](#-how-javascript-works)
+
 
 ---
 
@@ -28,9 +27,9 @@ JavaScript is a **programming language** used to make websites **interactive**, 
 
 If a webpage was a human:
 
-- 🧍 **HTML** = Body  
-- 👗 **CSS** = Clothes & Style  
-- 🧠 **JavaScript** = Brain  
+- 🧍 **HTML** = Body
+- 👗 **CSS** = Clothes & Style
+- 🧠 **JavaScript** = Brain
 
 ---
 
@@ -82,3 +81,61 @@ If a webpage was a human:
 ## 📷 Visual Poster
 
 ![Introduction to JavaScript](image.png)
+
+## 🪄 How JavaScript Works
+
+When JavaScript runs, it works like a **smart assistant** that follows every instruction in order.  
+To do this, it creates something called an **Execution Context** — a kind of **workspace** or **brain** where it keeps track of what’s happening.
+
+---
+
+### 🧰 What Is an Execution Context?
+
+The **Execution Context** is the environment where JavaScript code is executed.  
+It goes through **two main phases** every time a script runs:
+
+1. 🔧 **Memory Creation Phase** (also called _Creation Phase_ or _Variable Environment_)
+2. 🚀 **Code Execution Phase** (also called _Thread of Execution_)
+
+---
+
+### ✅ Step 1: Memory Creation Phase (Setup Time)
+
+📦 JavaScript scans the entire code and:
+
+- Creates space in memory for **variables** and **functions**
+- Stores everything in **key: value pairs**
+- Sets all **variables to `undefined`** (for now)
+- Stores **function code as-is** in memory
+
+🧠 **Real-life Analogy**:
+> A teacher enters the classroom early and writes the names of all students on the board — but doesn’t give them any tasks yet.  
+> It’s like labeling empty boxes on a shelf before putting anything inside.
+
+---
+
+### ✅ Step 2: Code Execution Phase (Do the Work)
+
+📜 Now JavaScript starts executing code **line by line**:
+
+- It replaces `undefined` with **actual values**
+- It **executes functions** when they are called
+
+🧠 **Real-life Analogy**:
+> The teacher starts calling students one by one to the board to **solve math problems**.  
+> Earlier, she just wrote their names — now they’re doing the actual work.
+
+---
+
+### 🧵 Important Notes
+
+- 🧠 **JavaScript is a Synchronous, Single-Threaded Language**
+  - **Single Threaded**: JavaScript executes **one command at a time**
+  - **Synchronous**: It executes code in a **specific order**, step by step, without skipping anything
+
+---
+
+## 📷 Visual Poster
+
+![How JavaScript Works](how-js-works.png)
+
