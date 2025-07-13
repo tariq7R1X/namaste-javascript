@@ -87,6 +87,19 @@ var sayHi = function () {
 
 ---
 
+---
+
+## ☠️ Temporal Dead Zone
+
+- ✅ TDZ applies only to let and const declarations.
+- ⏱ It starts when the scope is entered and ends when the variable is initialized.
+- ⚠ Accessing the variable during TDZ results in a ReferenceError.
+- 🧠 Unlike var, let and const are not initialized as undefined during hoisting.
+- 📍 TDZ exists to enforce temporal accuracy and prevent access to uninitialized variables.
+- 🚫 Access before declaration = error, not undefined.
+
+---
+
 ## 🎯 Importance in Code
 
 - ✅ Prevents bugs
@@ -138,3 +151,4 @@ var bar = function () {
 > ✨ **Tip:** Understanding hoisting helps you debug better, write cleaner code, and ace JavaScript interviews!
 
 ![Hoisting in JavaScript](hoisting-in-js.png)
+![Temporal Dead Zone](temporal-dead-zone.png)
