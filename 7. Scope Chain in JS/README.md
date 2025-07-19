@@ -3,6 +3,7 @@
 ## 📘 Technical Definitions
 
 ### 🔹 Scope
+
 > Scope defines the accessibility of variables and functions in various parts of your code.
 
 JavaScript uses **lexical scope**, meaning scope is defined at **code-writing time**, not runtime.
@@ -10,6 +11,7 @@ JavaScript uses **lexical scope**, meaning scope is defined at **code-writing ti
 ---
 
 ### 🔹 Lexical Environment
+
 > A structure that holds identifier-variable mappings and has a reference to its outer lexical environment.
 
 Each execution context in JS has a lexical environment.
@@ -17,6 +19,7 @@ Each execution context in JS has a lexical environment.
 ---
 
 ### 🔹 Scope Chain
+
 > A mechanism by which JavaScript resolves variable names by looking through chained lexical environments.
 
 ---
@@ -98,10 +101,12 @@ demo();
 ### Execution Steps
 
 1. Create Global Execution Context:
+
    - Memory Phase:  
      `a → undefined`, `foo → function`
 
 2. Execution Phase:
+
    - `a = 10`
    - `foo()` is invoked → new Execution Context is created
 
@@ -164,8 +169,6 @@ a();
 ```
 
 ---
-
-## 📺 Watch the Original Video
 
 ![Scope Chain in JS](scope-chain.png)
 
