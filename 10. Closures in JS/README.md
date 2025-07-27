@@ -135,9 +135,6 @@ Each event handler retains access to its respective `color` variable via closure
 Closures are a **fundamental yet often misunderstood concept**.  
 Even experienced developers struggle with them, yet they’re frequently asked in frontend interviews.
 
-Episode 10 of Namaste JavaScript simplifies the topic with strong visual + code-based explanation,  
-helping you confidently apply closures in real-world JavaScript and interviews.
-
 ---
 
 ## ✅ TL;DR (Quick Recap)
