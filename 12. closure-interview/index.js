@@ -23,4 +23,4 @@ function outer() {
 }
 
 outer()();
-// double parenthese will call outer function and also inner function
+// double parenthese will call outer function and also inner function 
