@@ -77,9 +77,9 @@ fs.readFile("data.txt", "utf-8", (err, data) => {
 flowchart LR
     A[JS Source Code] --> B[Parser]
     B --> C[AST]
-    C --> D[Interpreter (Bytecode)]
-    D --> E[JIT Compiler]
-    E --> F[Optimized Machine Code]
+    C --> D["Interpreter - Bytecode"]
+    D --> E["JIT Compiler"]
+    E --> F["Optimized Machine Code"]
 
 ```
 
