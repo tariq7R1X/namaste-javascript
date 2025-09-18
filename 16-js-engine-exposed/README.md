@@ -80,6 +80,7 @@ flowchart LR
     C --> D[Interpreter (Bytecode)]
     D --> E[JIT Compiler]
     E --> F[Optimized Machine Code]
+
 ```
 
 ---
