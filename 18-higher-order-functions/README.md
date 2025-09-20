@@ -102,48 +102,84 @@ result.push(fn(this[i], i, this));
 return result;
 }
 
-````|
-| **7. What are pitfalls of using HOF / FP?** | Nested callbacks or chaining may reduce readability; impure callbacks break predictability; performance concerns if over‑used; over‑engineering small tasks. |
-| **8. What is currying / partial application?** | Currying: transforming a function with multiple parameters into a sequence of functions each taking one parameter. Partial application: pre‑filling some arguments and producing a new function with fewer arguments. |
-| **9. Declarative vs imperative style?** | Imperative: you write out step‑by‑step how something is done (loops, mutation). Declarative: you state *what* should be done (map/filter) without specifying every step. FP favors declarative. |
-| **10. Give an example where a higher‑order function improves maintainability.** | Suppose you have several operations on an array (area, volume, etc.). Instead of writing loops for each, you write a general function `operate(arr, fn)` and pass in the specific operation. |
+---
+
+## Common Interview Questions (Detailed)
+
+### 7. What are pitfalls of using Higher-Order Functions / Functional Programming?
+
+- **Readability issues**: Nested callbacks or too much chaining can make code hard to follow.  
+- **Impure functions**: If passed functions are impure, predictability is lost.  
+- **Performance concerns**: Excessive chaining of `.map()`, `.filter()`, etc. may create overhead.  
+- **Over-engineering**: Using HOFs when a simple loop would suffice can add unnecessary complexity.  
 
 ---
 
-## Additional Examples
+### 8. What is Currying vs Partial Application?
 
-```js
-// Returning a function
-function multiplier(factor) {
-  return function(number) {
-    return number * factor;
-  };
-}
-const doubler = multiplier(2);
-console.log(doubler(5));  // 10
+- **Currying**  
+  - Breaking down a function that takes multiple arguments into a sequence of functions that each take one argument.  
+  - Example:  
+    ```js
+    const curryAdd = a => b => c => a + b + c;
+    console.log(curryAdd(1)(2)(3)); // 6
+    ```
 
-// Composition
-const add1 = x => x + 1;
-const square = x => x * x;
-
-const add1ThenSquare = x => square(add1(x));
-const squareThenAdd1 = x => add1(square(x));
-
-console.log(add1ThenSquare(2));  // 9
-console.log(squareThenAdd1(2));  // 5
-
-// Retry wrapper
-function retry(fn, times) {
-  return async function(...args) {
-    let attempt = 0;
-    while (attempt < times) {
-      try {
-        return await fn(...args);
-      } catch (err) {
-        attempt++;
-        if (attempt === times) throw err;
-      }
+- **Partial Application**  
+  - Fixing a few arguments of a function and returning another function with fewer arguments.  
+  - Example:  
+    ```js
+    function add(a, b, c) {
+      return a + b + c;
     }
-  };
-}
-````
+    const add5 = add.bind(null, 5);
+    console.log(add5(10, 15)); // 30
+    ```
+
+---
+
+### 9. Declarative vs Imperative Style
+
+- **Imperative**:  
+  - Focus on *how* to do something.  
+  - Example:  
+    ```js
+    let doubled = [];
+    for (let i = 0; i < arr.length; i++) {
+      doubled.push(arr[i] * 2);
+    }
+    ```
+
+- **Declarative**:  
+  - Focus on *what* you want.  
+  - Example:  
+    ```js
+    const doubled = arr.map(x => x * 2);
+    ```
+- Functional programming usually favors the declarative style because it’s more concise and expressive.  
+
+---
+
+### 10. Example: When Higher-Order Functions Improve Maintainability
+
+**Scenario:**  
+You have to perform multiple operations on an array of numbers (area, circumference, volume, etc.).  
+
+- **Without HOFs**: You’d write multiple loops, one for each operation → lots of duplicate code.  
+- **With HOFs**:  
+
+  ```js
+  function operate(arr, fn) {
+    const result = [];
+    for (let i = 0; i < arr.length; i++) {
+      result.push(fn(arr[i]));
+    }
+    return result;
+  }
+
+  const radii = [1, 2, 3];
+  const area = r => Math.PI * r * r;
+  const circumference = r => 2 * Math.PI * r;
+
+  console.log(operate(radii, area));
+  console.log(operate(radii, circumference));
