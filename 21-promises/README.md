@@ -94,7 +94,7 @@ Each step is async and depends on previous. Promises (or `async/await`) handle t
 
 | Question | Sample Answer |
 |---|----------------|
-| **What is a Promise in JavaScript?** | A Promise is an object representing a value which may be available now, or in the future, or never. It allows handling async operations more cleanly than callbacks. |
+| **What is a Promise in JavaScript?** | A promise is an object that represents eventual completion/failure of an asynchronous operation. |
 | **What are the states of a Promise?** | `pending`, `fulfilled` (success), `rejected` (failure). Once fulfilled or rejected, it can’t change. |
 | **What is callback hell and how do Promises solve it?** | Callback hell is deeply nested callbacks when async tasks depend on one another. Promises allow chaining with `.then` and flatten those structures. |
 | **What is “inversion of control” in callbacks?** | You give control to another function when passing a callback. Promises reduce this issue because handlers run only once when state changes. |
